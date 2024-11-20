@@ -12,6 +12,5 @@ imbalanced-learn
 dash
 plotly
 cmake
-streamlit==1.28.1
 ultralytics==8.2.14
 streamlit==1.34.0

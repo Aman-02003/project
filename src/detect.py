@@ -6,7 +6,7 @@ from keras.models import load_model
 def detect(wallet):
     BLOCKCHAIN_API_URL = "https://api.blockchain.com/v3/wallet"
     response = requests.get(f"{BLOCKCHAIN_API_URL}/{wallet}/transactions")
-    return response.json()
+    dtf1 =  response.json()
     # response = requests.get(f'https://dirtyapi.replit.app/api/{wallet}')
     # dtf1 = response.json()
     del dtf1["ERC20MostSentTokenType"]

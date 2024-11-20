@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 from keras.models import load_model
 def detect(wallet):
     BLOCKCHAIN_API_URL = "https://api.blockchain.com/v3/wallet"
-    response = requests.get(f"{BLOCKCHAIN_API_URL}/{wallet_address}/transactions")
+    response = requests.get(f"{BLOCKCHAIN_API_URL}/{wallet}/transactions")
     if response.status_code == 200:
         return response.json()
     return None

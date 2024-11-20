@@ -14,5 +14,7 @@ plotly
 
 
 cmake
+streamlit==1.28.1
+chromadb==0.4.20
 ultralytics==8.2.14
 streamlit==1.34.0

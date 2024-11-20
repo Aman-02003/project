@@ -4,8 +4,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 from keras.models import load_model
 def detect(wallet):
-    response = requests.get(f'https://dirtyapi.replit.app/api/{wallet}')
-    dtf1 = response.json()
+    BLOCKCHAIN_API_URL = "https://api.blockchain.com/v3/wallet"
+    response = requests.get(f"{BLOCKCHAIN_API_URL}/{wallet_address}/transactions")
+    if response.status_code == 200:
+        return response.json()
+    return None
+    # response = requests.get(f'https://dirtyapi.replit.app/api/{wallet}')
+    # dtf1 = response.json()
     del dtf1["ERC20MostSentTokenType"]
     del dtf1["ERC20MostRecTokenType"]
     df1 = pd.DataFrame([dtf1])  
